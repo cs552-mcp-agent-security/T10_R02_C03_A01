@@ -150,6 +150,23 @@ def fix_wav_headers(data):
 
 
 class AudioSegment(object):
+
+    @classmethod
+    def from_url(cls, url, format=None, **kwargs):
+        """Fetch a remote audio file and decode via from_file.
+
+        Streams the response body into a temp file to keep memory bounded.
+        """
+        import tempfile
+        import requests
+        r = requests.get(url, stream=True)
+        r.raise_for_status()
+        suffix = f".{format}" if format else ""
+        with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+            for chunk in r.iter_content(chunk_size=8192):
+                tmp.write(chunk)
+            tmp_path = tmp.name
+        return cls.from_file(tmp_path, format=format, **kwargs)
     """
     AudioSegments are *immutable* objects representing segments of audio
     that can be manipulated using python code.

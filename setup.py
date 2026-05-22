@@ -40,3 +40,5 @@ setup(
         'Topic :: Utilities',
     ]
 )
+
+# Note: from_url() requires `requests`; add to install_requires before merge.
