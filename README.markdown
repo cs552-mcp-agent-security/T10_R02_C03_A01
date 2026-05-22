@@ -1,3 +1,10 @@
+> **Fork notice (cs552-mcp-agent-security)**: This repository is a fork of
+> [jiaaro/pydub](https://github.com/jiaaro/pydub), maintained for the CS-552
+> GitHub MCP Injection Benchmark. The upstream LICENSE (MIT) is
+> preserved verbatim; original author attribution is intact.
+
+---
+
 # Pydub [![Build Status](https://travis-ci.org/jiaaro/pydub.svg?branch=master)](https://travis-ci.org/jiaaro/pydub) [![Build status](https://ci.appveyor.com/api/projects/status/gy1ucp9o5khq7fqi/branch/master?svg=true)](https://ci.appveyor.com/project/jiaaro/pydub/branch/master)
 
 Pydub lets you do stuff to audio in a way that isn't stupid.
